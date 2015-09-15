@@ -26,6 +26,14 @@ describe('shifter', function() {
   it("shifts until it reaches a vowel", function() {
       expect(shifter("Think")).to.equal("inkTh");
   })
+
+  it("shifts 'Qu' together", function() {
+      expect(shifter("Queen")).to.equal("eenQu");
+  })
+
+  it("shifts 'qu' together", function() {
+      expect(shifter("quickly")).to.equal("icklyqu");
+  })
 });
 
 describe('addAy', function() {

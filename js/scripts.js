@@ -26,6 +26,13 @@ var shifter = function(input) {
     var result = newArray.join("");
 
     return result;
+  } else if((firstLetter === "q" || firstLetter === "Q") && (secondLetter === "u" || secondLetter === "U")) {
+    inputArray.shift();
+    inputArray.shift();
+    var newArray = inputArray.concat(firstLetter, secondLetter);
+    var result = newArray.join("");
+
+    return result;
   } else if (checkConsonants(firstLetter)) {
     inputArray.shift();
     var newArray = inputArray.concat(firstLetter);
