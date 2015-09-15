@@ -16,9 +16,18 @@ var checkConsonants = function(input) {
 var shifter = function(input) {
   var inputArray = arrayMaker(input);
 
-  var firstLetter = inputArray.shift();
+  var firstLetter = inputArray[0];
+  var secondLetter = inputArray[1];
 
-  if (checkConsonants(firstLetter)) {
+  if ((checkConsonants(firstLetter)) && checkConsonants(secondLetter)) {
+    inputArray.shift();
+    inputArray.shift();
+    var newArray = inputArray.concat(firstLetter, secondLetter);
+    var result = newArray.join("");
+
+    return result;
+  } else if (checkConsonants(firstLetter)) {
+    inputArray.shift();
     var newArray = inputArray.concat(firstLetter);
     var result = newArray.join("");
 
@@ -26,5 +35,15 @@ var shifter = function(input) {
   } else {
     return input;
   }
-
 }
+
+$(document).ready(function() {
+  $("form#pig-latin").submit(function(event) {
+    var input = $("input#input").val();
+
+    $(".output").text("Haruka and Michiru forever!!");
+
+    $("#result").show();
+      event.preventDefault();
+  });
+});

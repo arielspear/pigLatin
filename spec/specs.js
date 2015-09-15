@@ -22,4 +22,14 @@ describe('shifter', function() {
   it("does not shift if the first letter is a vowel", function() {
       expect(shifter("Ariel")).to.equal("Ariel");
   })
+
+  it("shifts until it reaches a vowel", function() {
+      expect(shifter("Think")).to.equal("inkTh");
+  })
+});
+
+describe('addAy', function() {
+  it("adds ay onto the end of a shifted word", function() {
+      expects(addAy("Neptune")).to.equal("eptuneNay");
+  })
 });
