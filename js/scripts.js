@@ -37,11 +37,16 @@ var shifter = function(input) {
   }
 }
 
+var addAy = function(input) {
+  var shiftedInput = shifter(input);
+  return shiftedInput + "ay";
+}
+
 $(document).ready(function() {
   $("form#pig-latin").submit(function(event) {
     var input = $("input#input").val();
-
-    $(".output").text("Haruka and Michiru forever!!");
+    var result = addAy(input);
+    $(".output").text(result);
 
     $("#result").show();
       event.preventDefault();

@@ -30,6 +30,6 @@ describe('shifter', function() {
 
 describe('addAy', function() {
   it("adds ay onto the end of a shifted word", function() {
-      expects(addAy("Neptune")).to.equal("eptuneNay");
+      expect(addAy("Neptune")).to.equal("eptuneNay");
   })
 });
